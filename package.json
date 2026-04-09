@@ -1,0 +1,22 @@
+{
+  "name": "tdd-testes",
+  "version": "1.0.0",
+  "description": "Trabalho de testes",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marcos01MK/tdd-testes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Marcos01MK/tdd-testes/issues"
+  },
+  "homepage": "https://github.com/Marcos01MK/tdd-testes#readme"
+}
