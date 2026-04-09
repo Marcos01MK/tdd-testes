@@ -62,3 +62,14 @@ export function countCompleted(tasks) {
 export function countPending(tasks) {
   return tasks.filter((task) => task.completed === false).length;
 }
+export function countTasks(tasks) {
+  return tasks.length;
+}
+
+export function countCompleted(tasks) {
+  return tasks.filter((task) => task.completed).length;
+}
+
+export function countPending(tasks) {
+  return tasks.filter((task) => !task.completed).length;
+}
