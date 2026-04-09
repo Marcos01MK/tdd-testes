@@ -1,10 +1,12 @@
 {
   "name": "tdd-testes",
   "version": "1.0.0",
-  "description": "Aula prática de testes unitários com Vitest e TDD",
-  "main": "index.js",
+  "description": "Trabalho de testes",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "repository": {
     "type": "git",
@@ -13,12 +15,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/Marcos01MK/tdd-testes/issues"
   },
-  "homepage": "https://github.com/Marcos01MK/tdd-testes#readme",
-  "devDependencies": {
-    "vitest": "^4.1.4"
-  }
+  "homepage": "https://github.com/Marcos01MK/tdd-testes#readme"
 }
