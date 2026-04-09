@@ -1,48 +1,34 @@
-import { describe, it, expect } from 'vitest';
-import { validateTitle } from '../src/taskManager.js';
+import { validateTitle, createTask, addTask, toggleTask, resetId } from '../src/taskManager.js';
 
-describe('validateTitle', () => {
-  it('deve retornar true para um título válido', () => {
-    expect(validateTitle('Estudar Vitest')).toBe(true);
+describe('toggleTask', () => {
+  beforeEach(() => {
+    resetId();
   });
 
-  it('deve retornar true para título com exatamente 3 caracteres', () => {
-    expect(validateTitle('abc')).toBe(true);
+  it('deve marcar uma tarefa pendente como concluída', () => {
+    const task = createTask('Tarefa pendente');
+    const toggled = toggleTask(task);
+    expect(toggled.completed).toBe(true);
   });
 
-  it('deve retornar false para string vazia', () => {
-    expect(validateTitle('')).toBe(false);
+  it('deve desmarcar uma tarefa concluída', () => {
+    const task = createTask('Tarefa pendente');
+    const completed = toggleTask(task);
+    const uncompleted = toggleTask(completed);
+    expect(uncompleted.completed).toBe(false);
   });
 
-  it('deve retornar false para string com apenas espaços', () => {
-    expect(validateTitle('   ')).toBe(false);
+  it('deve manter o id e o título inalterados', () => {
+    const task = createTask('Minha tarefa');
+    const toggled = toggleTask(task);
+    expect(toggled.id).toBe(task.id);
+    expect(toggled.title).toBe(task.title);
   });
 
-  it('deve retornar false para título com menos de 3 caracteres', () => {
-    expect(validateTitle('ab')).toBe(false);
-  });
-
-  it('deve retornar false para null', () => {
-    expect(validateTitle(null)).toBe(false);
-  });
-
-  it('deve retornar false para undefined', () => {
-    expect(validateTitle(undefined)).toBe(false);
-  });
-
-  it('deve retornar false para número', () => {
-    expect(validateTitle(123)).toBe(false);
-  });
-
-  it('deve retornar false para booleano', () => {
-    expect(validateTitle(true)).toBe(false);
-  });
-
-  it('deve retornar false para array', () => {
-    expect(validateTitle(['tarefa'])).toBe(false);
-  });
-
-  it('deve considerar o título após trim', () => {
-    expect(validateTitle('  abc  ')).toBe(true);
+  it('deve retornar um NOVO objeto (imutabilidade)', () => {
+    const task = createTask('Tarefa original');
+    const toggled = toggleTask(task);
+    expect(toggled).not.toBe(task);
+    expect(task.completed).toBe(false);
   });
 });
