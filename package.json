@@ -1,0 +1,24 @@
+{
+  "name": "tdd-testes",
+  "version": "1.0.0",
+  "description": "Aula prática de testes unitários com Vitest e TDD",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marcos01MK/tdd-testes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Marcos01MK/tdd-testes/issues"
+  },
+  "homepage": "https://github.com/Marcos01MK/tdd-testes#readme",
+  "devDependencies": {
+    "vitest": "^4.1.4"
+  }
+}
