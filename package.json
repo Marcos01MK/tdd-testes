@@ -18,8 +18,5 @@
   "bugs": {
     "url": "https://github.com/Marcos01MK/tdd-testes/issues"
   },
-  "homepage": "https://github.com/Marcos01MK/tdd-testes#readme",
-  "devDependencies": {
-    "@vitest/coverage-v8": "^4.1.4"
-  }
+  "homepage": "https://github.com/Marcos01MK/tdd-testes#readme"
 }

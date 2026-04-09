@@ -50,14 +50,26 @@ export function filterTasks(tasks, status) {
       return [...tasks];
   }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of 9efe455 (feat: implementa countTasks, countCompleted e countPending)
 export function countTasks(tasks) {
   return tasks.length;
 }
 
 export function countCompleted(tasks) {
+<<<<<<< HEAD
   return tasks.filter((task) => task.completed).length;
 }
 
 export function countPending(tasks) {
   return tasks.filter((task) => !task.completed).length;
+=======
+  return tasks.filter((task) => task.completed === true).length;
+}
+
+export function countPending(tasks) {
+  return tasks.filter((task) => task.completed === false).length;
+>>>>>>> parent of 9efe455 (feat: implementa countTasks, countCompleted e countPending)
 }
