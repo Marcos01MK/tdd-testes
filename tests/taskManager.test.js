@@ -1,6 +1,17 @@
 import { describe, it, expect, beforeEach } from 'vitest';
-import { validateTitle, createTask, addTask, toggleTask, removeTask, filterTasks, resetId } from '../src/taskManager.js';
-
+import { describe, it, expect, beforeEach } from 'vitest';
+import {
+  validateTitle,
+  createTask,
+  addTask,
+  toggleTask,
+  removeTask,
+  filterTasks,
+  countTasks,
+  countCompleted,
+  countPending,
+  resetId
+} from '../src/taskManager.js';
 describe('validateTitle', () => {
   it('deve retornar true para um título válido', () => {
     expect(validateTitle('Estudar Vitest')).toBe(true);
@@ -246,3 +257,14 @@ describe('filterTasks', () => {
     expect(result).not.toBe(tasks);
   });
 });
+export function filterTasks(tasks, status) {
+  switch (status) {
+    case 'completed':
+      return tasks.filter((task) => task.completed === true);
+    case 'pending':
+      return tasks.filter((task) => task.completed === false);
+    case 'all':
+    default:
+      return [...tasks];
+  }
+}
